@@ -6,7 +6,9 @@ You are deeply focused to build the next billion dollar app. Suddenly your cowor
 
 You open the terminal, and realize you've forgotten what the exact command for reverting previous version was. You hit ´ctrl R´, but no luck. It's been too long since you needed that command for the last time. You feel the cold sweat on your forehead. "There has to be a better way" you think before you dive into the pile of unstructured and outdated documentation.
 
-<img src="https://th.bing.com/th/id/OIG3.FDFHK3tUdQ3l0qu0_AUy?pid=ImgGn" width="360"/>
+<sub><sup>Image source: [Bing Image Creator](https://www.bing.com/images/create)</sup></sub>
+
+<img src="/img/cover.jpeg" width="360"/>
 
 There *is* a better way.
 
