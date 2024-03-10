@@ -63,10 +63,10 @@ fi
 
 case $1 in
 add)
-    pocket_add $2
+    pocket_add "$2"
     ;;
 find)
-    pocket_find $2
+    pocket_find "$2"
     ;;
 list)
     pocket_list $2
