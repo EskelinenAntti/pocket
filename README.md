@@ -1,4 +1,4 @@
-# Shell Pocket
+# Pocket
 
 You are deeply focused to build the next billion dollar app. Suddenly your coworker pokes you and asks for help – the backend is down and every second counts as lost customers. 
 
@@ -18,4 +18,22 @@ There *is* a better way.
 
 ## Install
 
-TODO
+Clone the repo and add the `/bin` folder to your path. E.g. if you're using Mac and Zsh, you might want to run the following commands:
+
+```bash
+# Clone the repository.
+git clone git@github.com:EskelinenAntti/pocket.git
+
+# Enter into the cloned repo.
+cd pocket/
+
+# Add pocket to PATH. Warning: You need to be in the correct folder 
+# and using Zsh for this to work!
+echo PATH=\$PATH:$PWD/bin >> ~/.zshrc
+
+# Refresh the terminal session.
+source ~/.zshrc
+
+# start using pocket
+pocket --help
+```
