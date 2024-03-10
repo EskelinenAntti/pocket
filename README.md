@@ -16,6 +16,14 @@ There *is* a better way.
 - Makes it very easy to write down new commands and retrieve them right where you need them – in your terminal!
 - Really lightweight, just a few lines of bash code (You would probably do well by simply memoizing the the few bash commands this invokes under the hood. But hey, at least implementing this script was a fun learning experience for me 🤷)
 
+```bash
+$ pocket add 'git rebase main --update-refs'
+$ pocket add 'adb exec-out screencap -p > screen.png'
+$ pocket find adb
+adb exec-out screencap -p > screen.png
+```
+
+
 ## Install
 
 Clone the repo and add the `/bin` folder to your path. E.g. if you're using Mac and Zsh, you might want to run the following commands:
