@@ -4,9 +4,7 @@ POCKET_HOME="$HOME/.pocket"
 
 function pocket_add() {
     if [ -z "$1" ] || [ "$1" = "--help" ] || [ "$1" = "-h" ]; then
-        echo 'Write down new commands.'
-        echo ''
-        echo 'Usage: pocket add "git restore origin --source origin/main myfile.txt"'
+        pocket_print_help 'Write down new commands.' 'pocket add "git restore origin --source origin/main myfile.txt"'
         return
     fi
 
@@ -16,9 +14,7 @@ function pocket_add() {
 
 function pocket_find() {
     if [ -z "$1" ] || [ "$1" = "--help" ] || [ "$1" = "-h" ]; then
-        echo 'Find commands with a query (the 'query' can be a regural expression)'
-        echo ''
-        echo 'Usage: pocket find "restore"'
+        pocket_print_help 'Find commands with a (grep) query.' 'pocket find "restore"'
         return
     fi
 
@@ -27,9 +23,7 @@ function pocket_find() {
 
 function pocket_list() {
     if [ "$1" = "--help" ] || [ "$1" = "-h" ]; then
-        echo "List all the commands you've saved."
-        echo ''
-        echo 'Usage: pocket list'
+        pocket_print_help "List all the commands you've saved." 'pocket list'
         return
     fi
 
@@ -38,9 +32,7 @@ function pocket_list() {
 
 function pocket_edit() {
     if [ "$1" = "--help" ] || [ "$1" = "-h" ]; then
-        echo 'Edit the saved commands. Opens a text editor.'
-        echo ''
-        echo 'Usage: pocket edit'
+        pocket_print_help 'Edit the saved commands. Opens a text editor.' 'pocket edit'
         return
     fi
     vim $POCKET_HOME
@@ -54,11 +46,19 @@ function pocket_clean_up() {
     mv $temp_pocket_home $POCKET_HOME
 }
 
+function pocket_print_help() {
+    echo
+    echo "  $1"
+    echo
+    echo "  Usage: $2"
+    echo
+}
+
 touch $POCKET_HOME
 
 if [ "$1" = "--help" ] || [ "$1" = "-h" ]; then
-    echo "Usage: pocket add|find|list|edit"
-    return
+    pocket_print_help "Write down useful commands you use now and find them later." "pocket add|find|list|edit"
+    exit 0
 fi
 
 case $1 in
@@ -75,6 +75,6 @@ edit)
     pocket_edit $2
     ;;
 *)
-    echo "Usage: pocket add|find|list|edit"
+    pocket_print_help "Write down useful commands you use now and find them later." "pocket add|find|list|edit"
     ;;
 esac
